@@ -1,0 +1,34 @@
+<div class="row contract-header">
+  <div class="col-md-12">
+    <h2>Create Contract</h2>
+  </div>
+</div>
+<div class="row contract-body">
+  <div class="col-md-12">
+
+    <form action="" #contractForm (submit)="createContract(contractForm)" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="templateFile" class="form-label">Contract template file</label>
+      <input class="form-control" name="templateFile" type="file" id="templateFile" observeFiles (change)="handleFileInput($event.target.files)">
+    </div>
+    <div class="mb-3">
+      <label for="clientName" class="form-label">Client name</label>
+      <input class="form-control" name="name" type="text" id="clientName" [(ngModel)]="contract.name" placeholder="Name">
+    </div>
+    <div class="mb-3">
+      <label for="clientPhone" class="form-label">Phone</label>
+      <input class="form-control" name="phone" type="text" id="clientPhone" [(ngModel)]="contract.phone" placeholder="Phone">
+    </div>
+    <div class="mb-3">
+      <label for="clientEmail" class="form-label">Email</label>
+      <input class="form-control" name="email" type="email" id="clientEmail" [(ngModel)]="contract.email" placeholder="Email">
+    </div>
+    <div class="mb-3">
+      <label for="clientRentAmount" class="form-label">Rent Amount</label>
+      <input class="form-control" name="rentAmount" type="text" id="clientRentAmount" [(ngModel)]="contract.rentAmount" placeholder="Rent amount">
+    </div>
+
+      <button class="btn btn-primary"> Generate Contract</button>
+    </form>
+  </div>
+</div>

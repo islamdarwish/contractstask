@@ -1,0 +1,13 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - '8000:80'
+    working_dir: /app/frontend
+
+  backend:
+    build: ./backend
+    ports:
+      - '3000:3000'
+    working_dir: /app/backend
